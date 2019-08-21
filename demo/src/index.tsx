@@ -1,10 +1,25 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import { createGlobalStyle } from "styled-components";
-import { H1, H2, H3, H4, H5, H6, Text, Caption, Details } from "../../src";
+import {
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  Text,
+  Caption,
+  Details,
+  Header,
+} from "../../src";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,900&display=swap');
+
+  body, html {
+    margin: 0;
+  }
 `;
 
 class Demo extends Component {
@@ -25,6 +40,10 @@ class Demo extends Component {
         <Details>Base Text</Details>
 
         <h2>Headers</h2>
+        <Header
+          title="Add Learning Plan"
+          onClickBack={() => alert("You Clicked The Header")}
+        />
       </div>
     );
   }
