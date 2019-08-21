@@ -23,6 +23,8 @@ class Demo extends Component {
         <Text>Base Text</Text>
         <Caption>Base Text</Caption>
         <Details>Base Text</Details>
+
+        <h2>Headers</h2>
       </div>
     );
   }
