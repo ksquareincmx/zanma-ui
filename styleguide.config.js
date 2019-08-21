@@ -21,6 +21,7 @@ module.exports = {
         "src/H6.tsx",
         "src/Text.tsx",
         "src/Caption.tsx",
+        "src/Details.tsx",
         "src/Description.tsx",
       ],
     },
