@@ -3,21 +3,16 @@ import styled from "styled-components";
 import { BackIcon } from "./icons/BackIcon";
 import { Touchable } from "./Touchable";
 import { Colors } from "./colors";
-import { H4 } from "./typography";
+import { H4 } from "./H4";
 import { MediaQuery } from "./queries";
 
 export const HeaderTitle = styled(H4)`
   color: ${Colors.BASE_GRAY};
 `;
 
-export interface IHeaderProps {
-  onClickBack: (e: React.MouseEvent<HTMLElement>) => void;
-  title: string;
-}
-
 export const HeaderWrapper = styled.header`
   background-color: white;
-  box-shadow: 1px 1px 5px gray;
+  box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.1);
 `;
 
 export const HeaderContainer = styled.div`
@@ -38,6 +33,17 @@ export const HeaderContainer = styled.div`
     width: 1024px;
   }
 `;
+
+export interface IHeaderProps {
+  /**
+   * When the back arrow is clicked this method gets triggered
+   */
+  onClickBack: (e: React.MouseEvent<HTMLElement>) => void;
+  /**
+   * The header MUST have a title all the time
+   */
+  title: string;
+}
 
 export const Header: React.SFC<IHeaderProps> = ({
   onClickBack,

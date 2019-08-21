@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "./colors";
-import { FontWeight } from "./typography";
+import { FontWeight } from "./Typography";
 import { MediaQuery } from "./queries";
 
 export const Label = styled.label`

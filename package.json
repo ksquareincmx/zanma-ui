@@ -19,12 +19,17 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server",
     "build:ts": "tsc",
-    "build:all": "npm-run-all build:ts"
+    "build:all": "npm-run-all build:ts",
+    "docs:server": "styleguidist server",
+    "docs:build": "styleguidist build"
   },
   "dependencies": {
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "awesome-typescript-loader": "^5.2.1",
+    "create-nwb-webpack-config": "^1.0.1",
+    "react-docgen-typescript": "^1.12.5",
+    "react-styleguidist": "^9.1.16",
     "styled-components": "^4.3.2",
     "typescript": "^3.5.3"
   },

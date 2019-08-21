@@ -9,6 +9,6 @@ export const Touchable = styled.button`
   padding: 0;
 
   &:focus {
-    outline: 2px ridge ${Colors.PRIMARY_BLUE};
+    outline: 2px solid ${Colors.PRIMARY_BLUE};
   }
 `;

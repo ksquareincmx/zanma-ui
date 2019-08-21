@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Details, FontWeight } from "./typography";
+import { Details } from "./Details";
+import { FontWeight } from "./Typography";
 import { Colors } from "./colors";
 
 export interface ITabLabelProps {
