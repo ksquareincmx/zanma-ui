@@ -4,6 +4,7 @@ import { BackIcon } from "./icons/BackIcon";
 import { Touchable } from "./Touchable";
 import { Colors } from "./colors";
 import { H4 } from "./typography";
+import { MediaQuery } from "./queries";
 
 export const HeaderTitle = styled(H4)`
   color: ${Colors.BASE_GRAY};
@@ -27,12 +28,12 @@ export const HeaderContainer = styled.div`
   padding: 0 12px;
   transition: padding 0.2s ease-in, height 0.2s ease-in;
 
-  @media (min-width: 750px) {
+  @media (min-width: ${MediaQuery.MIN_TABLET_SIZE}px) {
     height: 52px;
     padding: 0 20px;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${MediaQuery.MIN_DESKTOP_SIZE}px) {
     margin: 0 auto;
     width: 1024px;
   }
