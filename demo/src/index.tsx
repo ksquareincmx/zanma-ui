@@ -12,7 +12,10 @@ import {
   Caption,
   Details,
   Header,
+  TabItem,
+  ProgressBar,
 } from "../../src";
+import { TabContainer, TabLabel } from "../../src/Tabs";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,900&display=swap');
@@ -40,10 +43,35 @@ class Demo extends Component {
         <Details>Base Text</Details>
 
         <h2>Headers</h2>
+
+        <h3>Stand Alone Header</h3>
         <Header
           title="Add Learning Plan"
           onClickBack={() => alert("You Clicked The Header")}
         />
+
+        <h3>Stand Alone Header with Stepper</h3>
+        <Header
+          title="Add Learning Plan"
+          onClickBack={() => alert("You Clicked The Header")}
+        >
+          <TabContainer>
+            <div>
+              <TabItem>
+                <TabLabel>INFORMATION</TabLabel>
+              </TabItem>
+              <TabItem>
+                <TabLabel isSelected>CONTENT</TabLabel>
+              </TabItem>
+              <TabItem>
+                <TabLabel>CONFIGURATION</TabLabel>
+              </TabItem>
+            </div>
+            <div>
+              <ProgressBar progress="50" />
+            </div>
+          </TabContainer>
+        </Header>
       </div>
     );
   }
