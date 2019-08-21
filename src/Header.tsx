@@ -48,7 +48,7 @@ export const Header: React.SFC<IHeaderProps> = ({
     <HeaderWrapper>
       <HeaderContainer>
         <Touchable onClick={onClickBack}>
-          <BackIcon size="22" />
+          <BackIcon size="14" />
         </Touchable>
         <HeaderTitle>{title}</HeaderTitle>
       </HeaderContainer>
