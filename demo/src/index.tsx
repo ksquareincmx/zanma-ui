@@ -3,6 +3,7 @@ import { render } from "react-dom";
 // import styled from "styled-components";
 import { Label, TextField } from "../../src/Field";
 import { SelectField } from "../../src/SelectField";
+import { MainHeader } from "../../src/MainHeader";
 
 const Demo: React.FC = () => {
   const [lastName, updateLastName] = React.useState("");
@@ -31,6 +32,9 @@ const Demo: React.FC = () => {
 
       <h3>Selects</h3>
       <SelectField value={value} onChange={handleChange} />
+
+      <h3>Main Header</h3>
+      <MainHeader />
     </div>
   );
 };
