@@ -1,9 +1,16 @@
 import React from "react";
 import { render } from "react-dom";
+// import styled from "styled-components";
 import { Label, TextField } from "../../src/Field";
+import { SelectField } from "../../src/SelectField";
 
 const Demo: React.FC = () => {
   const [lastName, updateLastName] = React.useState("");
+  const [value, updateValue] = React.useState("Option 1");
+
+  const handleChange = (newValue: string) => {
+    updateValue(newValue);
+  };
 
   return (
     <div>
@@ -21,6 +28,9 @@ const Demo: React.FC = () => {
         value={lastName}
         onChange={event => updateLastName(event.target.value)}
       />
+
+      <h3>Selects</h3>
+      <SelectField value={value} onChange={handleChange} />
     </div>
   );
 };
