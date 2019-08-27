@@ -8,6 +8,7 @@ import { MediaQuery } from "./queries";
 
 export const HeaderTitle = styled(H4)`
   color: ${Colors.BASE_GRAY};
+  margin-left: 8px;
 `;
 
 export const HeaderWrapper = styled.header`
