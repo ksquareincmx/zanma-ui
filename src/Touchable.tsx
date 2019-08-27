@@ -4,8 +4,8 @@ import { Colors } from "./colors";
 export const Touchable = styled.button`
   background-color: ${Colors.NONE};
   border: none;
+  box-sizing: border-box;
   display: block;
-  margin-right: 8px;
   padding: 0;
 
   &:focus {

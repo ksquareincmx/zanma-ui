@@ -1,6 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
 import { MediaQuery } from "./queries";
+import { Touchable } from "./Touchable";
+import { SettingsIcon } from "./icons/SettingsIcon";
+import { CertificatesIcon } from "./icons/CertificatesIcon";
 import { Caption } from "./Caption";
 
 const HeaderWrapper = styled.header`
@@ -12,7 +15,7 @@ const HeaderWrapper = styled.header`
 const HeaderContainer = styled.div`
   @media (min-width: ${MediaQuery.MIN_DESKTOP_SIZE}px) {
     margin: 0 auto;
-    width: ${MediaQuery.MIN_DESKTOP_SIZE}px;
+    max-width: ${MediaQuery.MIN_DESKTOP_SIZE}px;
   }
 `;
 
@@ -35,7 +38,37 @@ const MainHeaderProfile = styled.div`
   width: 33%;
 `;
 
-export const MainHeader = () => {
+export const MainHeaderLinks = styled.nav`
+  align-items: center;
+  height: 24px;
+  display: flex;
+  justify-content: space-around;
+`;
+
+export interface ILink {
+  id: number | string;
+  text: string;
+}
+
+export interface IMainHeaderProps {
+  /**
+   * List of optional bottom links
+   */
+  links?: Array<ILink>;
+  /**
+   * Link click handler
+   */
+  onClickLink?: (l: ILink) => (e: React.MouseEvent) => void;
+  logo?: React.ReactElement | React.FC | React.SFC;
+}
+
+export const noop = () => {};
+
+export const MainHeader: React.SFC<IMainHeaderProps> = ({
+  logo = null,
+  links = [],
+  onClickLink = noop,
+}) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
@@ -49,35 +82,19 @@ export const MainHeader = () => {
           }}
         >
           <MainHeaderNav />
-          <MainHeaderBrand>
-            <div
-              style={{
-                backgroundColor: "#A3ABB0",
-                height: "32px",
-                width: "120px",
-              }}
-            />
-          </MainHeaderBrand>
+          <MainHeaderBrand>{logo}</MainHeaderBrand>
           <MainHeaderProfile>
-            <div
-              style={{
-                backgroundColor: "#A3ABB0",
-                width: "24px",
-                height: "24px",
-                borderRadius: "100%",
-                marginRight: "16px",
-              }}
-            />
+            <div style={{ marginRight: "16px" }}>
+              <Touchable>
+                <CertificatesIcon size="24" alt="Certificates" />
+              </Touchable>
+            </div>
 
-            <div
-              style={{
-                backgroundColor: "#A3ABB0",
-                width: "24px",
-                height: "24px",
-                borderRadius: "100%",
-                marginRight: "16px",
-              }}
-            />
+            <div style={{ marginRight: "16px" }}>
+              <Touchable>
+                <SettingsIcon size="24" alt="Settings" />
+              </Touchable>
+            </div>
 
             <div
               style={{
@@ -89,20 +106,13 @@ export const MainHeader = () => {
             />
           </MainHeaderProfile>
         </div>
-        <div
-          style={{
-            height: "24px",
-            display: "flex",
-            justifyContent: "space-around",
-          }}
-        >
-          <Caption>Home</Caption>
-          <Caption>Courses</Caption>
-          <Caption>Learning Plans</Caption>
-          <Caption>Programs</Caption>
-          <Caption>Users</Caption>
-          <Caption>Groups</Caption>
-        </div>
+        <MainHeaderLinks>
+          {links.map(link => (
+            <Touchable key={link.id} onClick={onClickLink(link)}>
+              <Caption>{link.text}</Caption>
+            </Touchable>
+          ))}
+        </MainHeaderLinks>
       </HeaderContainer>
     </HeaderWrapper>
   );

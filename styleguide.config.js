@@ -8,7 +8,7 @@ module.exports = {
   sections: [
     {
       name: "Headers",
-      components: ["src/Header.tsx"],
+      components: ["src/Header.tsx", "src/MainHeader.tsx"],
     },
     {
       name: "Typography",
