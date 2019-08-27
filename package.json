@@ -1,6 +1,6 @@
 {
-  "name": "zanma-ui",
-  "version": "0.1.0",
+  "name": "@ksquareincmx/zanma-ui",
+  "version": "0.1.1",
   "description": "zanma-ui React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -44,8 +44,17 @@
   "author": "Michell Ayala <michell.ayala@ksquareinc.com>",
   "homepage": "https://github.com/ksquareincmx/zanma-ui",
   "license": "MIT",
-  "repository": "https://github.com/ksquareincmx/zanma-ui.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksquareincmx/zanma-ui.git"
+  },
   "keywords": [
     "react-component"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/ksquareincmx/zanma-ui/issues"
+  },
+  "directories": {
+    "test": "tests"
+  }
 }
