@@ -7,7 +7,7 @@ module.exports = {
   webpack: {
     config(config) {
       config.entry = {
-        demo: ["./demo/src/index.tsx"],
+        demo: ["./src/index.tsx"],
       };
       config.resolve.extensions = [".ts", ".tsx", ".js", ".jsx"];
       config.module.rules.push({
