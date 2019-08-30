@@ -10,7 +10,9 @@ export const SelectField: React.FC<ISelectFieldProps> = ({
   value,
   onChange,
 }) => {
-  const [timeOutId, updateTimeOutId] = React.useState(null);
+  const [timeOutId, updateTimeOutId] = React.useState<number | undefined>(
+    undefined,
+  );
   const [isOpen, updateIsOpen] = React.useState(false);
 
   const handleBlur = () => {
@@ -34,8 +36,7 @@ export const SelectField: React.FC<ISelectFieldProps> = ({
     updateIsOpen(false);
   };
 
-  const handleClickPress = (val: string) => event => {
-    console.log(event.keyCode);
+  const handleClickPress = (val: string) => (event: React.KeyboardEvent) => {
     if (event.keyCode === 32 || event.keyCode === 13) {
       onChange(val);
       updateIsOpen(false);

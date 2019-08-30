@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Colors } from "./colors";
-import { FontWeight } from "./Typography";
-import { MediaQuery } from "./queries";
+import { Colors } from "../styles/colors";
+import { FontWeight } from "../styles/typography";
+import { MediaQuery } from "../styles/queries";
 
 export const Label = styled.label`
   color: ${Colors.BASE_GRAY};

@@ -1,11 +1,14 @@
 import * as React from "react";
 import styled from "styled-components";
-import { BackIcon } from "./icons/BackIcon";
+import { BackIcon } from "../icons/BackIcon";
+import { Colors } from "../styles/colors";
+import { MediaQuery } from "../styles/queries";
 import { Touchable } from "./Touchable";
-import { Colors } from "./colors";
 import { H4 } from "./H4";
-import { MediaQuery } from "./queries";
 
+/**
+ * @ignore
+ */
 export const HeaderTitle = styled(H4)`
   color: ${Colors.BASE_GRAY};
   margin-left: 8px;

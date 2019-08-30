@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Colors } from "./colors";
-import { FontWeight } from "./Typography";
+import { Colors } from "../styles/colors";
+import { FontWeight } from "../styles/typography";
 
 /**
  * @component

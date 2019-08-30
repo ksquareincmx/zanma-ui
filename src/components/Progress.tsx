@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors } from "./colors";
+import { Colors } from "../styles/colors";
 
 export interface IProgressBarProps {
   progress: string | number;

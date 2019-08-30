@@ -1,9 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
-import { MediaQuery } from "./queries";
+import { MediaQuery } from "../styles/queries";
+import { SettingsIcon } from "../icons/SettingsIcon";
+import { CertificatesIcon } from "../icons/CertificatesIcon";
 import { Touchable } from "./Touchable";
-import { SettingsIcon } from "./icons/SettingsIcon";
-import { CertificatesIcon } from "./icons/CertificatesIcon";
 import { Caption } from "./Caption";
 
 const HeaderWrapper = styled.header`
@@ -58,7 +58,7 @@ export interface IMainHeaderProps {
   /**
    * Link click handler
    */
-  onClickLink?: (l: ILink) => (e: React.MouseEvent) => void;
+  onClickLink: (l: ILink) => (e: React.MouseEvent) => void;
   logo?: React.ReactElement | React.FC | React.SFC;
 }
 
@@ -67,7 +67,7 @@ export const noop = () => {};
 export const MainHeader: React.SFC<IMainHeaderProps> = ({
   logo = null,
   links = [],
-  onClickLink = noop,
+  onClickLink,
 }) => {
   return (
     <HeaderWrapper>

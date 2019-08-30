@@ -1,28 +1,28 @@
-var createNwbWebpackConfig = require("create-nwb-webpack-config");
-
 module.exports = {
   propsParser: require("react-docgen-typescript").withCustomConfig(
     "./tsconfig.json",
   ).parse,
-  webpackConfig: createNwbWebpackConfig(),
   sections: [
     {
       name: "Headers",
-      components: ["src/Header.tsx", "src/MainHeader.tsx"],
+      components: [
+        "src/components/Header.tsx",
+        "src/components/MainHeader.tsx",
+      ],
     },
     {
       name: "Typography",
       components: [
-        "src/H1.tsx",
-        "src/H2.tsx",
-        "src/H3.tsx",
-        "src/H4.tsx",
-        "src/H5.tsx",
-        "src/H6.tsx",
-        "src/Text.tsx",
-        "src/Caption.tsx",
-        "src/Details.tsx",
-        "src/Description.tsx",
+        "src/components/H1.tsx",
+        "src/components/H2.tsx",
+        "src/components/H3.tsx",
+        "src/components/H4.tsx",
+        "src/components/H5.tsx",
+        "src/components/H6.tsx",
+        "src/components/Text.tsx",
+        "src/components/Caption.tsx",
+        "src/components/Details.tsx",
+        "src/components/Description.tsx",
       ],
     },
   ],

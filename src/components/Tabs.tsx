@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Details } from "./Details";
-import { FontWeight } from "./Typography";
-import { Colors } from "./colors";
+import { FontWeight } from "../styles/typography";
+import { Colors } from "../styles/colors";
 
 export interface ITabLabelProps {
   isSelected?: boolean;
@@ -30,7 +30,7 @@ export const TabItem = styled.div`
   width: 33%;
 `;
 
-export const TabLabel = styled<ITabLabelProps>(Details)`
+export const TabLabel = styled(Details)`
   color: ${(props: ITabLabelProps) => tabLabelColor(props.isSelected)};
   font-weight: ${(props: ITabLabelProps) =>
     tabLabelFontWeight(props.isSelected)};
